@@ -17,7 +17,6 @@ describe('testa <About/>', () => {
       'img',
       { name: /pikachu crying because the page requested was not found/i },
     );
-    console.log(img);
     expect(img).toHaveProperty('src', 'https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif');
   });
 });

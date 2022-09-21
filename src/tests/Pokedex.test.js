@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import renderWithRouter from '../renderWithRouter';
 import App from '../App';
 
@@ -36,5 +37,16 @@ describe('testa "<Pokedex />"', () => {
     expect(t5).toBeInTheDocument();
     expect(t6).toBeInTheDocument();
     expect(t7).toBeInTheDocument();
+  });
+  it('', () => {
+    renderWithRouter(<App />);
+
+    const btn = screen.getByRole('button', { name: /all/i });
+    userEvent.click(btn);
+    const btn2 = screen.getByRole('button', { name: /próximo pokémon/i });
+    userEvent.click(btn2);
+    const pokemon = screen.getByText(/charmander/i);
+
+    expect(pokemon).toBeInTheDocument();
   });
 });

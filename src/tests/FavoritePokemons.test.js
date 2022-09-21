@@ -6,8 +6,6 @@ describe('testa <FavoritePokemons/>', () => {
     render(<FavoritePokemons />);
 
     const texto = screen.getByText('No favorite pokemon found');
-    console.log(texto);
-
     expect(texto).toBeInTheDocument();
   });
 });
